@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <tempfile property="temp.file"/>
+  <echo message="auth-update/config" file="${temp.file}"/>
+  <replace token="." file="${temp.file}" value="/"/>
+  <loadfile property="module.path" srcfile="${temp.file}"/>
+  <delete file="${temp.file}"/>
+  <delete dir="target/module"/>
+  <property name="module.dir" value="samples/${module.path}/"/>
+  <copy file="target/conup-sample-configuration-client-0.9.1-DU-SNAPSHOT.jar" tofile="/home/deerstalker/conup/conup-read-only/distribution/conup-0.9.0-DU/conup-0.9.0-DU/${module.dir}/conup-sample-configuration-client.jar"/>
+  <echo>Module auth-update/config has been created in the	TUSCANY_HOME/samples directory.</echo>
+</target>
+</project>

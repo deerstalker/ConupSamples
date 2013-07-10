@@ -1,0 +1,12 @@
+<archetype>
+  <id>tuscany-archetype</id>
+  <sources>
+    <source>src/main/java/App.java</source>
+  </sources>
+  <resources>
+  	<resource>src/main/resources/App.composite</resource>
+  	<resource>src/main/resources/META-INF/definitions.xml</resource>
+  	<resource>src/main/resources/META-INF/sca-contribution.xml</resource>
+  </resources>
+ 
+</archetype>

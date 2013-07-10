@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>	
+		
+<composite	xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+		xmlns:tuscany="http://tuscany.apache.org/xmlns/sca/1.1"
+		xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+		targetNamespace="http://conup"
+		name="conup-hydrology-pondage-update"
+		 >
+        
+		<component name="NodePondageComponent">
+			<implementation.java class="cn.edu.nju.moon.node.pondage.PondageServiceImpl" />
+			
+			<service name="ProcService" requires="trace" policySets="traceBindingPolicySet">
+				<tuscany:binding.jsonrpc uri="http://114.212.87.230:8082/NodePondageComponent/PondageService" />
+			</service>
+			
+			<reference name="dbPondage" requires="trace" policySets="traceBindingPolicySet">
+				<tuscany:binding.jsonrpc uri="http://114.212.87.230:8083/HydrologyDBComponent/Pondage" />
+			</reference>
+		</component>
+
+</composite>

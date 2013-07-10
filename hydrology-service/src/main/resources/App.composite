@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>	
+		
+<composite	xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+		xmlns:tuscany="http://tuscany.apache.org/xmlns/sca/1.1"
+		xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+		targetNamespace="http://conup"
+		name="hydrology-service"
+		 >
+        
+		<component name="HydrologyDBComponent">
+			<implementation.java class="cn.edu.nju.moon.db.service.DBServiceImpl" />
+			
+			<service name="StationRainfall" requires="trace" policySets="traceBindingPolicySet">
+				<tuscany:binding.jsonrpc uri="http://172.25.147.151:8083/HydrologyDBComponent/StationRainfall" />
+			</service>
+			<service name="CityRainfall" requires="trace" policySets="traceBindingPolicySet">
+				<tuscany:binding.jsonrpc uri="http://172.25.147.151:8083/HydrologyDBComponent/CityRainfall" />
+			</service>
+			<service name="Pondage" requires="trace" policySets="traceBindingPolicySet">
+				<tuscany:binding.jsonrpc uri="http://172.25.147.151:8083/HydrologyDBComponent/Pondage" />
+			</service>
+			
+		</component>
+		</component>
+		
+
+</composite>

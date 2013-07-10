@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>	
+		
+<composite	xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+		xmlns:tuscany="http://tuscany.apache.org/xmlns/sca/1.1"
+		xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+		targetNamespace="http://conup"
+		name="hydrology-intergration"
+		 >
+        
+		<component name="HydrologyIntergrationComponent">
+			<implementation.java class="cn.edu.nju.moon.intergration.service.IgHydrologyServiceImpl" />
+			
+			<service name="IgPondageService" requires="trace" policySets="traceBindingPolicySet">
+				<interface.java interface="cn.edu.nju.moon.intergration.pondage.JaxrsPondage"/>
+				<tuscany:binding.rest uri="http://172.25.147.151:8090/HydrologyIntergrationComponent/IgPondageService" />
+			</service>
+			<reference name="wsPondage" requires="trace" policySets="traceBindingPolicySet">
+				<tuscany:binding.jsonrpc uri="http://172.25.147.151:8081/HydrologyComponent/PondageWSService" />
+			</reference>
+			
+			<service name="IgCityRainfallService" requires="trace" policySets="traceBindingPolicySet">
+				<interface.java interface="cn.edu.nju.moon.intergration.rainfall.city.JaxrsCityRainfall"/> 
+				<tuscany:binding.rest uri="http://172.25.147.151:8090/HydrologyIntergrationComponent/IgCityRainfallService" />
+			</service>
+			<reference name="wsCityRf" requires="trace" policySets="traceBindingPolicySet">
+				<tuscany:binding.jsonrpc uri="http://172.25.147.151:8081/HydrologyComponent/CityRfWSService" />
+			</reference>
+			
+			<service name="IgStationRainfallService" requires="trace" policySets="traceBindingPolicySet">
+				<interface.java interface="cn.edu.nju.moon.intergration.rainfall.station.JaxrsStationRainfall"/>
+				<tuscany:binding.rest uri="http://172.25.147.151:8090/HydrologyIntergrationComponent/IgStationRainfallService" />
+			</service>
+			<reference name="wsStationRf" requires="trace" policySets="traceBindingPolicySet">
+					<tuscany:binding.jsonrpc uri="http://172.25.147.151:8081/HydrologyComponent/StationRfWSService" />
+			</reference>
+		</component>
+
+ 
+</composite>
