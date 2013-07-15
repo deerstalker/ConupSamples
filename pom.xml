@@ -33,15 +33,14 @@
 
     <modules>
         <module>authUpdate</module>
-	<module>conup-travel-sample</module>
 	<module>hydrology-db</module>
 	<module>hydrology-pondage</module>
 	<module>hydrology-ws</module>
-		<!--
-        <module>getting-started</module>
-        <module>running-tuscany</module>
-		<module>learning-more</module>
-		-->
+	<module>hydrology-intergration</module>
+	<module>hydrology-rainfall-station</module>
+	<module>hydrology-rainfall-city</module>
+	<module>hydrology-service</module>
+	
     </modules>
 
 </project>

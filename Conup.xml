@@ -1,0 +1,28 @@
+<!--ADD BY CHENDONG-->
+		<component name="HydrologyDBComponent">
+			<parent>NodePondageComponent</parent>
+			<parent>NodeRainfallCityComponent</parent>
+			<parent>NodeRainfallStationComponent</parent>
+		</component>
+		<component name="NodePondageComponent">
+			<parent>HydrologyComponent</parent>
+			<child>HydrologyDBComponent</child>
+		</component>
+		<component name="NodeRainfallCityComponent">
+			<parent>HydrologyComponent</parent>
+			<child>HydrologyDBComponent</child>
+		</component>
+		<component name="NodeRainfallStationComponent">
+			<parent>HydrologyComponent</parent>
+			<child>HydrologyDBComponent</child>
+		</component>
+		<component name="HydrologyComponent">
+			<parent>HydrologyIntergrationComponent</parent>
+			<child>NodePondageComponent</child>
+			<child>NodeRainfallCityComponent</child>
+			<child>NodeRainfallStationComponent</child>
+		</component>
+		<component name="HydrologyIntergrationComponent">
+			<child>HydrologyComponent</child>
+		</component>
+
