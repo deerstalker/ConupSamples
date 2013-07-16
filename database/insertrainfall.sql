@@ -1,5 +1,5 @@
 ﻿
-insert into `rainfall` ('CITYID_', `TIME_`, `AMOUNT_`)values
+insert into `rainfall` (`CITYID_`, `TIME_`, `AMOUNT_`)values
 /*台州 7号*/
 	('001', '2012-08-07 00:00:00', 0),
 	('001', '2012-08-07 01:00:00', 0),

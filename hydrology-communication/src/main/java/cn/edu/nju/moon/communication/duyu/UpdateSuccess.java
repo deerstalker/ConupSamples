@@ -8,7 +8,7 @@ public class UpdateSuccess {
 
 	private String comp;
 	public void updateSuccess() throws Throwable{
-		InvokerLocator myLocator = new InvokerLocator("socket://192.168.0.1557:9001");
+		InvokerLocator myLocator = new InvokerLocator("socket://172.25.146.39:9001");
 		Client myClient = new Client(myLocator,"dilepis.reb");
 		myClient.connect();
 		Object[] params = new Object[3];

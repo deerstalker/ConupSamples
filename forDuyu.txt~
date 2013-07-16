@@ -1,0 +1,7 @@
+basedir=/home/deerstalker/conup/conup-read-only/samples/{project_name}/target/classes/${project_name}
+classpath=cn/edu/nju/moon/service/DBServiceImpl
+for example:
+	hydrology-db:basedir=/home/deerstalker/conup/conup-read-only/samples/hydrology-db/target/classes
+
+
+

@@ -7,7 +7,7 @@ import org.jboss.remoting.InvokerLocator;
 public class RecievedComposite {
 
 	public void recievedCompositeSuccess() throws Throwable{
-		InvokerLocator myLocator = new InvokerLocator("socket://192.168.0.155:9001");
+		InvokerLocator myLocator = new InvokerLocator("socket://172.25.146.39:9001");
 		Client myClient = new Client(myLocator,"dilepis.reb");
 		myClient.connect();
 		Object[] params = new Object[3];
