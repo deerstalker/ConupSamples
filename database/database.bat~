@@ -12,9 +12,6 @@ echo Ïòstationrainfall±íÖÐ²åÈëÓêÁ¿ÊýŸÝ
 mysql HYDROLOGY -uroot -pnjueducn<"insertstationrainfall.sql"
 echo Ïòpondage±íÖÐ²åÈëË®Î»ÊýŸÝ
 mysql HYDROLOGY -uroot -pnjueducn<"insertpondage.sql"
-echo 向cityweather表中插入数据
-mysql HYDROLOGY -uroot -pnjueducn<"insertcityweather.sql"
-echo 向stationweather表中插入数据
-mysql HYDROLOGY -uroot -pnjueducn<"insertstationweather.sql"
+echo 
 pause
 
