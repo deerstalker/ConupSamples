@@ -74,12 +74,10 @@ CREATE TABLE `CITYWEATHERINFO` (
 	`CITYID_` int(10) unsigned,
 	`TIME_` datetime default '0000-00-00 00:00:00',
 	`WEATHER_` varchar(30), 
-	`TemperatureMax_` Decimal(3,1),
-	`TemperatureMin_` Decimal(3,1),
-	`WindSpeedMax_` int,
-	`WindSpeedMin_` int,
+	`TEMPERATURE_ varchar(30),
+	`WIND_` varchar(30),
 	PRIMARY KEY (`id`),
-	KEY `FK_CITYID` (`PLACEID_`),
+	KEY `FK_CITYID` (`CITYID_`),
 	CONSTRAINT `FK_CITYID` FOREIGN KEY (CITYID_) REFERENCES `CITY` (`ID_`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 LOCK TABLES `WEATHERINFO` WRITE;
@@ -91,10 +89,8 @@ CREATE TABLE `STATIONWEATHERINFO` (
 	`STATIONID_` int(10) unsigned,
 	`TIME_` datetime default '0000-00-00 00:00:00',
 	`WEATHER_` varchar(30),
-	`TemperatureMax_` Decimal(3,1),
-	`TemperatureMin_` Decimal(3,1),
-	`WindSpeedMax_` int,
-	`WindSpeedMin_` int,
+	`TEMPERATURE_` varchar(30),
+	`WIND__` varchar(30),
 	PRIMARY KEY (`id`),
 	KEY `FK_STATIONID` (STATIONID_),
 	CONSTRAINT `FK_STATIONID` FOREIGN KEY (STATIONID_) REFERENCES `STATIONINFO` (`ID_`)
