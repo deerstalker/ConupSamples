@@ -67,3 +67,40 @@ CREATE TABLE `STATIONRAINFALL` (
 
 LOCK TABLES `STATIONRAINFALL` WRITE;
 UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `CITYWEATHERINFO`;
+CREATE TABLE `CITYWEATHERINFO` (
+	`id` int(10) unsigned NOT NULL auto_increment,
+	`CITYID_` int(10) unsigned,
+	`TIME_` datetime default '0000-00-00 00:00:00',
+	`WEATHER_` varchar(30), 
+	`TemperatureMax_` Decimal(3,1),
+	`TemperatureMin_` Decimal(3,1),
+	`WindSpeedMax_` int,
+	`WindSpeedMin_` int,
+	PRIMARY KEY (`id`),
+	KEY `FK_CITYID` (`PLACEID_`),
+	CONSTRAINT `FK_CITYID` FOREIGN KEY (CITYID_) REFERENCES `CITY` (`ID_`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+LOCK TABLES `WEATHERINFO` WRITE;
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `STATIONWEATHERINFO`
+CREATE TABLE `STATIONWEATHERINFO` (
+	`id` int(10) unsigned NOT NULL auto_increment,
+	`STATIONID_` int(10) unsigned,
+	`TIME_` datetime default '0000-00-00 00:00:00',
+	`WEATHER_` varchar(30),
+	`TemperatureMax_` Decimal(3,1),
+	`TemperatureMin_` Decimal(3,1),
+	`WindSpeedMax_` int,
+	`WindSpeedMin_` int,
+	PRIMARY KEY (`id`),
+	KEY `FK_STATIONID` (STATIONID_),
+	CONSTRAINT `FK_STATIONID` FOREIGN KEY (STATIONID_) REFERENCES `STATIONINFO` (`ID_`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `STATIONWEATHERINFO` WRITE;
+UNLOCK TABLES;
+
+
