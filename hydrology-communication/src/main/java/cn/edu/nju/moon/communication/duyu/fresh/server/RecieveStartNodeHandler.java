@@ -24,11 +24,13 @@ public class RecieveStartNodeHandler implements ServerInvocationHandler{
 
 	@Override
 	public Object invoke(InvocationRequest arg0) throws Throwable {
+		StartToRun s = new StartToRun();
+		s.start2run();
+		
 		//在这里写run的代码
 		startAllNodes();
 		//
-		StartToRun s = new StartToRun();
-		s.start2run();
+		
 		return null;
 	}
 	private static void startAllNodes() {

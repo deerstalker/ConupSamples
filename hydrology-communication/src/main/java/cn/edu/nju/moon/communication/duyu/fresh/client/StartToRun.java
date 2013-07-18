@@ -17,8 +17,10 @@ public class StartToRun {
 		Client myClient = new Client(myLocator,"dilepis.reb");
 		myClient.connect();
 		Object[] params = new Object[3];
-		params[0]="print";
+		params[0]="run";
 		params[1]="[Server]开始运行";
 		myClient.invoke(params);
+//		System.out.println("shou dao composite wen jian le !");
+		
 	}
 }

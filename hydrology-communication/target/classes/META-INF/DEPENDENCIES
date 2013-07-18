@@ -159,7 +159,7 @@ From: 'The Apache Software Foundation' (http://www.apache.org/)
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
   - Apache Tuscany SCA Contribution Model (http://tuscany.apache.org/tuscany-modules/tuscany-contribution) org.apache.tuscany.sca:tuscany-contribution:jar:2.0
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - Apache Tuscany SCA Core Runtime (https://conup.googlecode.com/p/conup/tuscany-modules/tuscany-core) org.apache.tuscany.sca:tuscany-core:jar:0.9.1-DU-SNAPSHOT
+  - Apache Tuscany SCA Core Runtime (http://tuscany.apache.org/tuscany-modules/tuscany-core) org.apache.tuscany.sca:tuscany-core:jar:2.0
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
   - Apache Tuscany SCA Core/DataBinding Integration (https://conup.googlecode.com/p/conup/tuscany-modules/tuscany-core-databinding) org.apache.tuscany.sca:tuscany-core-databinding:jar:0.9.1-DU-SNAPSHOT
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)

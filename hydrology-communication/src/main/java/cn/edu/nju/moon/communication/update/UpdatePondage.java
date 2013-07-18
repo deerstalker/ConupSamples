@@ -27,8 +27,17 @@ public class UpdatePondage {
 		contributionUri = "hydrology-pondage";
 		compsiteUri = "App.composite";
 		int port = 18082;
-
-		rcs.update("172.25.147.151", port, compIdentifier, "CONSISTENCY",
-				baseDir, classFilePath, contributionUri, compsiteUri);
+		/*
+		 * 172.25.147.151$18082$NodePondageComponent$CONSISTENCY$/home/deerstalker
+		 * /
+		 * conup/conup-read-only/samples/hydrology-pondage/target/classes/$cn/edu
+		 * /nju/moon/node/pondage/PondageServiceImpl$hydrology-pondage$App.
+		 * composite$172.25.146.39
+		 */
+		rcs.update("172.25.147.151", 18082, "NodePondageComponent",
+				"CONSISTENCY",
+				"/home/deerstalker/conup/conup-read-only/samples/update",
+				"cn.edu.nju.moon.node.pondage.PondageServiceImpl",
+				"hydrology-pondage", "App.composite", "172.25.146.39");
 	}
 }

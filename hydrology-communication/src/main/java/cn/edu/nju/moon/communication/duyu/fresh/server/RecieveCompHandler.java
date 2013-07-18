@@ -26,7 +26,6 @@ import cn.edu.nju.moon.communication.duyu.fresh.client.RecievedComposite;
  *
  */
 public class RecieveCompHandler implements ServerInvocationHandler{
-	private int num = 0;
 	File newfile = null;
 	@Override
 	public void addListener(InvokerCallbackHandler arg0) {

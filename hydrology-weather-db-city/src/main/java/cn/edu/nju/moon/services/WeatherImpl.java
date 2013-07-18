@@ -55,7 +55,7 @@ public class WeatherImpl implements Weather {
 			e.printStackTrace();
 		}
 		LOGGER.info(result);
-		String temp = "中国人";
+		String temp = "zhongguoren";
 		return temp;
 	}
 

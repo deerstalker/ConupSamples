@@ -47,6 +47,7 @@ public class IgHydrologyServiceImpl implements IgCityRainfallService, IgStationR
 	public String getPondage(String station, String time) {
 		// TODO Auto-generated method stub
 		return wsPondage.getWSPondage(station, time);
+//		return "中国人";
 	}
 	
 	@ConupTransaction
