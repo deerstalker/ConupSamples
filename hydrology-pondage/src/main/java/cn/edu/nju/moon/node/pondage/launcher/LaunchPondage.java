@@ -41,22 +41,11 @@ public class LaunchPondage {
 		NodeManager nodeMgr;
 		nodeMgr = NodeManager.getInstance();
 		nodeMgr.loadConupConf("NodePondageComponent", "oldVersion");
-		// ComponentObject compObj = nodeMgr.getComponentObject("DBComponent");
-		// LOGGER.fine(compObj.getStaticDeps() + "\n" +
-		// compObj.getStaticInDeps() + "\n" + compObj.getAlgorithmConf());
 
 		CompLifecycleManager.getInstance("NodePondageComponent").setNode(node);
 
 		// nodeMgr.getDynamicDepManager("DBComponent").ondemandSetupIsDone();
 		CommServerManager.getInstance().start("NodePondageComponent");
-
-		// send ondemand request
-		// sendOndemandRqst();
-
-		// access
-		// accessServices(node);
-//		TestServiceThread tServiceThread = new TestServiceThread(node);
-//		tServiceThread.start();
 		System.in.read();
 		LOGGER.fine("Stopping ...");
 		node.stop();

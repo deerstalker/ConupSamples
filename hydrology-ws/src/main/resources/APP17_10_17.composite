@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912" xmlns:tuscany="http://tuscany.apache.org/xmlns/sca/1.1" xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912" targetNamespace="http://conup" name="hydrology-ws">
+  <component name="HydrologyComponent">
+    <implementation.java class="cn.edu.nju.moon.ws.service.HydrologyServiceImpl"/>
+    <reference name="nodePondage" requires="trace" policySets="traceBindingPolicySet">
+      <tuscany:binding.jsonrpc uri="http://172.25.147.151:8082/NodePondageComponent/PondageService"/>
+    </reference>
+    <reference name="nodeCityRf" requires="trace" policySets="traceBindingPolicySet">
+      <tuscany:binding.jsonrpc uri="http://172.25.147.151:8084/NodeRainfallCityComponent/CityRainfallService"/>
+    </reference>
+    <reference name="nodeStationRf" requires="trace" policySets="traceBindingPolicySet">
+      <tuscany:binding.jsonrpc uri="http://172.25.147.151:8085/NodeRainfallStationComponent/StationRainfallService"/>
+    </reference>
+    <service name="PondageWSService" requires="trace" policySets="traceBindingPolicySet">
+      <tuscany:binding.jsonrpc uri="http://172.25.147.151:8081/HydrologyComponent/PondageWSService"/>
+    </service>
+    <service name="CityRfWSService" requires="trace" policySets="traceBindingPolicySet">
+      <tuscany:binding.jsonrpc uri="http://172.25.147.151:8081/HydrologyComponent/CityRfWSService"/>
+    </service>
+    <service name="StationRfWSService" requires="trace" policySets="traceBindingPolicySet">
+      <tuscany:binding.jsonrpc uri="http://172.25.147.151:8081/HydrologyComponent/StationRfWSService"/>
+    </service>
+  </component>
+</composite>

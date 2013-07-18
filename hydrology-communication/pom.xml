@@ -128,7 +128,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>cn.edu.nju.moon.communication.duyu.SetupServer</mainClass>
+							<mainClass>cn.edu.nju.moon.communication.launcher.MainLauncher</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

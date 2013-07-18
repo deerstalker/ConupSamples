@@ -1,0 +1,93 @@
+package cn.edu.nju.moon.communication.duyu.fresh.server;
+
+import javax.management.MBeanServer;
+
+import org.apache.tuscany.sca.contribution.processor.ContributionReadException;
+import org.apache.tuscany.sca.monitor.ValidationException;
+import org.apache.tuscany.sca.runtime.ActivationException;
+import org.jboss.remoting.InvocationRequest;
+import org.jboss.remoting.ServerInvocationHandler;
+import org.jboss.remoting.ServerInvoker;
+import org.jboss.remoting.callback.InvokerCallbackHandler;
+
+import cn.edu.nju.moon.communication.duyu.fresh.client.StartToRun;
+import cn.edu.nju.moon.communication.launcher.ComponentLaunch;
+
+
+public class RecieveStartNodeHandler implements ServerInvocationHandler{
+
+	@Override
+	public void addListener(InvokerCallbackHandler arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Object invoke(InvocationRequest arg0) throws Throwable {
+		//在这里写run的代码
+		startAllNodes();
+		//
+		StartToRun s = new StartToRun();
+		s.start2run();
+		return null;
+	}
+	private static void startAllNodes() {
+		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+		ComponentLaunch dbComponentLaunch = new ComponentLaunch(
+				"/home/deerstalker/conup/conup-read-only/samples/hydrology-db/target/classes",
+				"hydrology-db", "App.composite", "HydrologyDBComponent");
+		ComponentLaunch pondageComponentLaunch = new ComponentLaunch(
+				"/home/deerstalker/conup/conup-read-only/samples/hydrology-pondage/target/classes",
+				"hydrology-pondage", "App.composite",
+				"NodePondageComponent");
+		ComponentLaunch cityRainComponentLaunch = new ComponentLaunch(
+				"/home/deerstalker/conup/conup-read-only/samples/hydrology-rainfall-city/target/classes",
+				"hydrology-rainfall-city", "App.composite",
+				"NodeRainfallCityComponent");
+		ComponentLaunch stationRainComponentLaunch = new ComponentLaunch(
+				"/home/deerstalker/conup/conup-read-only/samples/hydrology-rainfall-station/target/classes",
+				"hydrology-rainfall-station", "App.composite",
+				"NodeRainfallStationComponent");
+		ComponentLaunch wsComponentLaunch = new ComponentLaunch(
+				"/home/deerstalker/conup/conup-read-only/samples/hydrology-ws/target/classes",
+				"hydrology-ws", "App.composite", "HydrologyComponent");
+		ComponentLaunch intergrationComponentLaunch = new ComponentLaunch(
+				"/home/deerstalker/conup/conup-read-only/samples/hydrology-intergration/target/classes",
+				"hydrology-intergration", "App.composite",
+				"HydrologyIntergrationComponent");
+		try {
+			dbComponentLaunch.startNode();
+			pondageComponentLaunch.startNode();
+			cityRainComponentLaunch.startNode();
+			stationRainComponentLaunch.startNode();
+			wsComponentLaunch.startNode();
+			intergrationComponentLaunch.startNode();
+		} catch (ContributionReadException e) {
+			e.printStackTrace();
+		} catch (ValidationException e) {
+			e.printStackTrace();
+		} catch (ActivationException e) {
+			e.printStackTrace();
+		}
+
+	}
+	@Override
+	public void removeListener(InvokerCallbackHandler arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setInvoker(ServerInvoker arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setMBeanServer(MBeanServer arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

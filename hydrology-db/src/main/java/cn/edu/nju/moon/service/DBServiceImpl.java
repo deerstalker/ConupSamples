@@ -27,7 +27,7 @@ public class DBServiceImpl implements CityRainfall, StationRainfall, Pondage{
    				result = "notconnected";
    			}
 //   			Statement statement = conn.createStatement();
-   			String sql = "select WATERLEVEL_ from pondage, stationinfo  where TIME_ = ? and stationinfo.ALIAS_ = ? and stationinfo.ID_ = pondage.id";
+   			String sql = "select WATERLEVEL_ from pondage, stationinfo  where TIME_ = ? and stationinfo.ALIAS_ = ? and stationinfo.ID_ = pondage.STATIONID_";
    			PreparedStatement statement = conn.prepareStatement(sql);
 //			"2012-08-08 09:00:00"
    			statement.setString(1, time);
@@ -60,7 +60,7 @@ public class DBServiceImpl implements CityRainfall, StationRainfall, Pondage{
    				result = "notconnected";
    			}
 //   			Statement statement = conn.createStatement();
-   			String sql = "select AMOUNT_ from stationrainfall, stationinfo  where TIME_ = ? and stationinfo.ALIAS_ = ? and stationinfo.ID_ = stationrainfall.id";
+   			String sql = "select AMOUNT_ from stationrainfall, stationinfo  where TIME_ = ? and stationinfo.ALIAS_ = ? and stationinfo.ID_ = stationrainfall.STATIONID_";
    			PreparedStatement statement = conn.prepareStatement(sql);
 //			"2012-08-08 09:00:00"
    			statement.setString(1, time);
@@ -93,7 +93,7 @@ public class DBServiceImpl implements CityRainfall, StationRainfall, Pondage{
    				result = "notconnected";
    			}
 //   			Statement statement = conn.createStatement();
-   			String sql = "select AMOUNT_ from rainfall, city  where TIME_ = ? and city.ALIAS_ = ? and city.ID_ = rainfall.id";
+   			String sql = "select AMOUNT_ from rainfall, city  where TIME_ = ? and city.ALIAS_ = ? and city.ID_ = rainfall.CITYID_";
    			PreparedStatement statement = conn.prepareStatement(sql);
 //			"2012-08-08 09:00:00"
    			statement.setString(1, time);
