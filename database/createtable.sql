@@ -110,6 +110,8 @@ CREATE TABLE `TYPHOOINFO` (
 	`MAXIMUMWINDSPEED_` varchar(30),
 	`GALERADIUS_` varchar(30),
 	`WHOLEGALERADIUS_` varchar(30),
+	`WARNLEVEL_` varchar(20),
+	`FLAG_` float,
 	PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
