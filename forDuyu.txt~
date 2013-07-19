@@ -1,7 +1,20 @@
-basedir=/home/deerstalker/conup/conup-read-only/samples/{project_name}/target/classes/${project_name}
-classpath=cn/edu/nju/moon/service/DBServiceImpl
+basedir=/home/deerstalker/conup/conup-read-only/samples/${project_name}/target/classes/
+
 for example:
 	hydrology-db:basedir=/home/deerstalker/conup/conup-read-only/samples/hydrology-db/target/classes
+		
 
+classpath:
+	hydrology-db:cn.edu.nju.moon.service.DBServiceImpl
+	hydrology-intergration:cn.edu.nju.moon.intergration.service.IgHydrologyServiceImpl
+	hydrology-pondage:cn.edu.nju.moon.node.pondage.PondageServiceImpl
+	hydrology-pondage-update:cn.edu.nju.moon.node.pondage.PondageServiceImpl
+	hydrology-rainfall-city:cn.edu.nju.moon.node.rainfall.city.CityRainfallServiceImpl
+	hydrology-rainfall-station:cn.edu.nju.moon.node.rainfall.station.StationRainfallServiceImpl
+	hydrology-ws:cn.edu.nju.moon.ws.service.HydrologyServiceImpl
+	
+	hydrology-weather-city:cn.edu.nju.moon.weather.city.services.CityWeatherImpl
+	hydrology-weather-station:cn.edu.nju.moon.weather.station.services.StationWeatherImpl
+	
 
 

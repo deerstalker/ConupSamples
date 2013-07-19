@@ -5,12 +5,17 @@ for example:
 		
 
 classpath:
-	hydrology-db:cn/edu/nju/moon/service/DBServiceImpl
-	hydrology-intergration:cn/edu/nju/moon/intergration/service/IgHydrologyServiceImpl
-	hydrology-pondage:cn/edu/nju/moon/node/pondage/PondageServiceImpl
-	hydrology-pondage-update:cn/edu/nju/moon/node/pondage/PondageServiceImpl
-	hydrology-rainfall-city:cn/edu/nju/moon/node/rainfall/city/CityRainfallServiceImpl
-	hydrology-rainfall-station:cn/edu/nju/moon/node/rainfall/station/StationRainfallServiceImpl
-	hydrology-ws:cn/edu/nju/moon/ws/service/HydrologyServiceImpl
+	hydrology-db:cn.edu.nju.moon.service.DBServiceImpl
+	hydrology-intergration:cn.edu.nju.moon.intergration.service.IgHydrologyServiceImpl
+	hydrology-pondage:cn.edu.nju.moon.node.pondage.PondageServiceImpl
+	hydrology-pondage-update:cn.edu.nju.moon.node.pondage.PondageServiceImpl
+	hydrology-rainfall-city:cn.edu.nju.moon.node.rainfall.city.CityRainfallServiceImpl
+	hydrology-rainfall-station:cn.edu.nju.moon.node.rainfall.station.StationRainfallServiceImpl
+	hydrology-ws:cn.edu.nju.moon.ws.service.HydrologyServiceImpl
+	
+	hydrology-weather-city:cn.edu.nju.moon.weather.city.services.CityWeatherImpl
+	hydrology-weather-station:cn.edu.nju.moon.weather.station.services.StationWeatherImpl
+	hydrology-weather-intergration:cn.edu.nju.moon.weather.intergration.services.JaxrsWeather
+	
 
 
