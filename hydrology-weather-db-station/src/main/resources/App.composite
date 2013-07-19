@@ -8,9 +8,9 @@
 		 >
         
 		<component name="DBStationWeatherComponent">
-			<implementation.java class="cn.edu.nju.moon.services.WeatherImpl" />
+			<implementation.java class="cn.edu.nju.moon.weather.station.services.StationWeatherImpl" />
 			
-			<service name="Weather" requires="trace" policySets="traceBindingPolicySet">
+			<service name="StationWeather" requires="trace" policySets="traceBindingPolicySet">
 				<tuscany:binding.jsonrpc uri="http://172.25.147.151:8061/DBStationWeatherComponent/DBStationWeatherService" />
 			</service>
 		</component>

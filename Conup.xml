@@ -26,3 +26,13 @@
 			<child>HydrologyComponent</child>
 		</component>
 
+		<component name="WeatherIntergrationComponent">
+			<child>DBCityWeatherComponent</child>
+			<child>DBStationWeatherComponent</child>
+		</component>
+		<component name="DBCityWeatherComponent">
+			<parent>WeatherIntergrationComponent</parent>
+		</component>
+		<component name="DBStationWeatherComponent">
+			<parent>WeatherIntergrationComponent</parent>
+		</component>

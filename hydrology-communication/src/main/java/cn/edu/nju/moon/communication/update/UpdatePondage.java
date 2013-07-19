@@ -36,7 +36,7 @@ public class UpdatePondage {
 		 */
 		rcs.update("172.25.147.151", 18082, "NodePondageComponent",
 				"CONSISTENCY",
-				"/home/deerstalker/conup/conup-read-only/samples/update",
+				"/home/deerstalker/conup/conup-read-only/samples/update/",
 				"cn.edu.nju.moon.node.pondage.PondageServiceImpl",
 				"hydrology-pondage", "App.composite", "172.25.146.39");
 	}
