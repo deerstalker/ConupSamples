@@ -11,7 +11,7 @@
 			<implementation.java class="cn.edu.nju.moon.weather.intergration.services.WeatherImpl" />
 			
 			<service name="Weather" requires="trace" policySets="traceBindingPolicySet">
-				<interface.java interface="cn.edu.nju.moon.weather.intergration.services.JaxrsWeather"/>
+				<interface.java interface="cn.edu.nju.moon.weather.intergration.services.weatherReport.JaxrsWeather"/>
 				<tuscany:binding.rest uri="http://172.25.147.151:8062/WeatherIntergrationComponent/WeatherService" />
 			</service>
 			<reference name="mCityWeather" requires="trace" policySets="traceBindingPolicySet">
@@ -19,6 +19,14 @@
 			</reference>
 			<reference name="mStationWeather" requires="trace" policySets="traceBindingPolicySet">
 				<tuscany:binding.jsonrpc uri="http://172.25.147.151:8061/DBStationWeatherComponent/DBStationWeatherService" />
+			</reference>
+			
+			<service name="TyphoonService" requires="trace" policySets="traceBindingPolicySet">
+				<interface.java interface="cn.edu.nju.moon.weather.intergration.services.typhoon.JaxrsTyphoon"/>
+				<tuscany:binding.rest uri="http://172.25.147.151:8062/WeatherIntergrationComponent/TyphoonService" />
+			</service>
+			<reference name="mTyphoon" requires="trace" policySets="traceBindingPolicySet">
+				<tuscany:binding.jsonrpc uri="http://172.25.147.151:8064/TyphoonDbComponent/Typhoon" />
 			</reference>
 		</component>
 

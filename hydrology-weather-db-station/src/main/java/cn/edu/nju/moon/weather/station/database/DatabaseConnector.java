@@ -23,7 +23,7 @@ public enum DatabaseConnector {
 		info.setProperty("proxool.house-keeping-test-sql", "select CURRENT_DATE");
 		info.setProperty("user", "root");
 		info.setProperty("password", "njueducn");
-		String alias = "test";
+		String alias = "weather-station";
 		String driverClass = "com.mysql.jdbc.Driver";
 		String driverUrl = "jdbc:mysql://114.212.86.206:3306/HYDROLOGY";
 		String url = "proxool." + alias + ":" + driverClass + ":" + driverUrl;
@@ -37,7 +37,7 @@ public enum DatabaseConnector {
 	public Connection getConnection(){
 		Connection connection = null;
 		try {
-			connection = DriverManager.getConnection("proxool.test");
+			connection = DriverManager.getConnection("proxool.weather-station");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

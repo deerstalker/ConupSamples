@@ -57,6 +57,18 @@ public class RecieveStartNodeHandler implements ServerInvocationHandler{
 				"/home/deerstalker/conup/conup-read-only/samples/hydrology-intergration/target/classes",
 				"hydrology-intergration", "App.composite",
 				"HydrologyIntergrationComponent");
+		ComponentLaunch weatherCityComponentLaunch = new ComponentLaunch(
+				"/home/deerstalker/conup/conup-read-only/samples/hydrology-weather-db-city/target/classes",
+				"hydrology-weather-db-city", "App.composite",
+				"DBCityWeatherComponent");
+		ComponentLaunch weatherStationComponentLaunch = new ComponentLaunch(
+				"/home/deerstalker/conup/conup-read-only/samples/hydrology-weather-db-station/target/classes",
+				"hydrology-weather-db-station", "App.composite",
+				"DBStationWeatherComponent");
+		ComponentLaunch weatherIntergrationComponentLaunch = new ComponentLaunch(
+				"/home/deerstalker/conup/conup-read-only/samples/hydrology-weather-intergration/target/classes",
+				"hydrology-weather-intergration", "App.composite",
+				"WeatherIntergrationComponent");
 		try {
 			dbComponentLaunch.startNode();
 			pondageComponentLaunch.startNode();
@@ -64,6 +76,9 @@ public class RecieveStartNodeHandler implements ServerInvocationHandler{
 			stationRainComponentLaunch.startNode();
 			wsComponentLaunch.startNode();
 			intergrationComponentLaunch.startNode();
+			weatherCityComponentLaunch.startNode();
+			weatherStationComponentLaunch.startNode();
+			weatherIntergrationComponentLaunch.startNode();
 		} catch (ContributionReadException e) {
 			e.printStackTrace();
 		} catch (ValidationException e) {
