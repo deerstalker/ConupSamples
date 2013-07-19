@@ -18,5 +18,7 @@ echo 向stationweather表中插入数据
 mysql HYDROLOGY -uroot -pnjueducn<"insertstationweather.sql"
 echo 向typhooInfo表中插入数据
 mysql HYDROLOGY -uroot -pnjueducn<"insertTyphoonInfo.sql"
+echo 向reservoirInfo表中插入数据
+mysql HYDROLOGY -uroot -pnjueducn<"insertreservoirinfo.sql"
 pause
 
