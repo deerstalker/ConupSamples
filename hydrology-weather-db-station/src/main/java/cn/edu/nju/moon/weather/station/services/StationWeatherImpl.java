@@ -35,7 +35,7 @@ public class StationWeatherImpl implements StationWeather {
 				result = "notconnected";
 			}
 			// Statement statement = conn.createStatement();
-			String sql = "select WEATHER_, TEMPERATURE_, WIND_ from STATIONWEATHERINFO, STATIONINFO  where TIME_ = ? and STATIONINFO.ALIAS_ = ? and STATIONINFO.ID_ = STATIONWEATHERINFO.STATIONID_";
+			String sql = "select id, WEATHER_, TEMPERATURE_, WIND_ from STATIONWEATHERINFO, STATIONINFO  where TIME_ = ? and STATIONINFO.ALIAS_ = ? and STATIONINFO.ID_ = STATIONWEATHERINFO.STATIONID_";
 			PreparedStatement statement = conn.prepareStatement(sql);
 			// "2012-08-08 09:00:00"
 			statement.setString(1, time);
@@ -43,7 +43,8 @@ public class StationWeatherImpl implements StationWeather {
 			statement.setString(2, station);
 			ResultSet tResultSet = statement.executeQuery();
 			if (tResultSet.next()) {
-				result = tResultSet.getString("WEATHER_") + "#" + tResultSet.getString("TEMPERATURE_") + "#" + tResultSet.getString("WIND_");
+//				result = tResultSet.getString("id") + "#" + tResultSet.getString("WEATHER_") + "#" + tResultSet.getString("TEMPERATURE_") + "#" + tResultSet.getString("WIND_");
+				result = tResultSet.getString("id");
 			}
 			tResultSet.close();
 			conn.close();

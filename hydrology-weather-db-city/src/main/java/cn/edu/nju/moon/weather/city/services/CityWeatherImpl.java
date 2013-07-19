@@ -35,15 +35,16 @@ public class CityWeatherImpl implements CityWeather {
 				result = "notconnected";
 			}
 			// Statement statement = conn.createStatement();
-			String sql = "select WEATHER_, TEMPERATURE_, WIND_ from CITYWEATHERINFO, city  where TIME_ = ? and city.ALIAS_ = ? and city.ID_ = CITYWEATHERINFO.CITYID_";
+			String sql = "select id, WEATHER_, TEMPERATURE_, WIND_ from CITYWEATHERINFO, city  where TIME_ = ? and city.ALIAS_ = ? and city.ID_ = CITYWEATHERINFO.CITYID_";
 			PreparedStatement statement = conn.prepareStatement(sql);
-			// "2012-08-08 09:00:00"
+			// content like: "2012-08-08 09:00:00"
 			statement.setString(1, time);
-			// "台州"
+			// content like: "台州"
 			statement.setString(2, city);
 			ResultSet tResultSet = statement.executeQuery();
 			if (tResultSet.next()) {
-				result = tResultSet.getString("WEATHER_") + "#" + tResultSet.getString("TEMPERATURE_") + "#" + tResultSet.getString("WIND_");
+//				result = tResultSet.getString("id") + "#" + tResultSet.getString("WEATHER_") + "#" + tResultSet.getString("TEMPERATURE_") + "#" + tResultSet.getString("WIND_");
+				result = tResultSet.getString("id");
 			}
 			tResultSet.close();
 			conn.close();
@@ -54,9 +55,7 @@ public class CityWeatherImpl implements CityWeather {
 			// do something
 			e.printStackTrace();
 		}
-		LOGGER.info(result);
-		String temp = "zhongguoren";
-		return temp;
+		return result;
 	}
 
 }

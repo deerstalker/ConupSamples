@@ -11,16 +11,15 @@
 			<implementation.java class="cn.edu.nju.moon.weather.intergration.services.WeatherImpl" />
 			
 			<service name="Weather" requires="trace" policySets="traceBindingPolicySet">
-				<tuscany:binding.jsonrpc uri="http://172.25.147.151:8062/WeatherIntergrationComponent/WeatherService" />
+				<interface.java interface="cn.edu.nju.moon.weather.intergration.services.JaxrsWeather"/>
+				<tuscany:binding.rest uri="http://172.25.147.151:8062/WeatherIntergrationComponent/WeatherService" />
 			</service>
-			
 			<reference name="mCityWeather" requires="trace" policySets="traceBindingPolicySet">
 				<tuscany:binding.jsonrpc uri="http://172.25.147.151:8060/DBCityWeatherComponent/DBCityWeatherService" />
 			</reference>
 			<reference name="mStationWeather" requires="trace" policySets="traceBindingPolicySet">
 				<tuscany:binding.jsonrpc uri="http://172.25.147.151:8061/DBStationWeatherComponent/DBStationWeatherService" />
 			</reference>
-			
 		</component>
 
 </composite>

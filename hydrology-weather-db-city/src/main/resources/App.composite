@@ -11,6 +11,7 @@
 			<implementation.java class="cn.edu.nju.moon.weather.city.services.CityWeatherImpl" />
 			
 			<service name="CityWeather" requires="trace" policySets="traceBindingPolicySet">
+				<interface.java interface="cn.edu.nju.moon.weather.city.services.JaxrsCityWeather"/>
 				<tuscany:binding.jsonrpc uri="http://172.25.147.151:8060/DBCityWeatherComponent/DBCityWeatherService" />
 			</service>
 		</component>
