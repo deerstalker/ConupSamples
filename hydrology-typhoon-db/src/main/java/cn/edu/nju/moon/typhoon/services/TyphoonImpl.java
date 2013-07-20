@@ -48,7 +48,11 @@ public class TyphoonImpl implements Typhoon {
 			statement.setString(1, flag);
 			ResultSet tResultSet = statement.executeQuery();
 			if (tResultSet.next()) {
-				result = tResultSet.getString("ID_");
+				result = tResultSet.getString("ID_") + "#" + tResultSet.getString("TIME_") + "#" 
+						+ tResultSet.getString("LONGITUDE_") + "#" + tResultSet.getString("LATITUDE_") + "#" 
+						+ tResultSet.getString("PRESSURE_") + "#" + tResultSet.getString("MAXIMUMWINDSPEED_") + "#" 
+						+ tResultSet.getString("GALERADIUS_") + "#" + tResultSet.getString("WHOLEGALERADIUS_") + "#" 
+						+ tResultSet.getString("WARNLEVEL_");
 			}
 			tResultSet.close();
 			conn.close();
@@ -59,6 +63,7 @@ public class TyphoonImpl implements Typhoon {
 			// do something
 			e.printStackTrace();
 		}
+		LOGGER.info(result);
 		return result;
 	}
 

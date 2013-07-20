@@ -23,6 +23,8 @@ public class LaunchWeather {
 				"hydrology-weather-intergration", "App.composite", "WeatherIntergrationComponent");
 		try {
 			dbComponentLaunch.startNode();
+			
+			
 		} catch (ContributionReadException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

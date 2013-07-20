@@ -35,7 +35,6 @@ CREATE TABLE `STATIONINFO`(
 	`TYPE_` int unsigned,
 	`RVNM` varchar(30),
 	`HNNM` varchar(30),
-	`STLC` varchar(30),
 	`DRNA` int,
 	PRIMARY KEY  (`ID_`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

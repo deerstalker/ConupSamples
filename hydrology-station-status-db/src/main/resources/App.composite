@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>	
+		
+<composite	xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+		xmlns:tuscany="http://tuscany.apache.org/xmlns/sca/1.1"
+		xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+		targetNamespace="http://conup"
+		name="hydrology-station-status-db"
+		 >
+        
+		<component name="HydrologyStationDBComponent">
+			<implementation.java class="cn.edu.nju.moon.station.db.services.DBServiceImpl" />
+			
+			<service name="DBService" requires="trace" policySets="traceBindingPolicySet">
+				<tuscany:binding.jsonrpc uri="http://172.25.147.151:8066/HydrologyStationDBComponent/StationDBService" />
+			</service>
+		</component>
+
+</composite>

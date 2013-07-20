@@ -9,6 +9,7 @@ import org.apache.tuscany.sca.runtime.ActivationException;
 import cn.edu.nju.conup.comm.api.manager.CommServerManager;
 import cn.edu.nju.moon.conup.ext.lifecycle.CompLifecycleManager;
 import cn.edu.nju.moon.conup.spi.manager.NodeManager;
+import cn.edu.nju.moon.weather.intergration.services.typhoon.Typhoon;
 
 public class ComponentLaunch {
 
@@ -44,7 +45,7 @@ public class ComponentLaunch {
 
 		CompLifecycleManager.getInstance(componentName).setNode(node);
 		CommServerManager.getInstance().start(componentName);
-
+//		Typhoon typhoon = node.getService(Typhoon.class, );
 	}
 	public void stopNode(){
 		node.stop();

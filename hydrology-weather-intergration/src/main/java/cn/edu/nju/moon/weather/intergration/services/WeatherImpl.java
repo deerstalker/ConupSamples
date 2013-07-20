@@ -1,5 +1,6 @@
 package cn.edu.nju.moon.weather.intergration.services;
 
+import java.io.UnsupportedEncodingException;
 import java.util.logging.Logger;
 
 import org.oasisopen.sca.annotation.Reference;
@@ -64,7 +65,17 @@ public class WeatherImpl implements Weather, TyphoonService {
 	@ConupTransaction
 	public String getTyphoon(String flag) {
 		// TODO Auto-generated method stub
-		return mTyphoon.getTyPhoonInfo(flag);
+//		return mTyphoon.getTyPhoonInfo(flag);
+		String resultString = mTyphoon.getTyPhoonInfo(flag);
+		logger.info(resultString);
+		try {
+			String resultUTF8 = new String(resultString.getBytes("ISO-8859-1"),"UTF-8");
+			logger.info(resultUTF8);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return resultString;
 	}
 
 }

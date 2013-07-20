@@ -33,9 +33,9 @@ CREATE TABLE `STATIONINFO`(
 	`NAME_` varchar(80) character set utf8 NOT NULL default '',
 	`ALIAS_` varchar(80) NOT NULL default '',
 	`TYPE_` int unsigned,
-	`RVNM` varchar(30),
-	`HNNM` varchar(30),
-	`DRNA` int,
+	`RVNM_` varchar(30),
+	`HNNM_` varchar(30),
+	`DRNA_` int,
 	PRIMARY KEY  (`ID_`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
