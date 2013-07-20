@@ -51,6 +51,10 @@ CREATE TABLE `STATIONINFO`(
 			}
 			if(token.equals("level2")){
 				//query video
+				result = result + "#" + tResultSet.getString("VIDEOURL_");
+			}
+			else if(token.equals("level1")){
+				result = result + "#";
 			}
 			tResultSet.close();
 			conn.close();
