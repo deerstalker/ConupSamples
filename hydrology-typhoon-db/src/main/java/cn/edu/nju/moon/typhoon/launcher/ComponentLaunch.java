@@ -52,7 +52,8 @@ public class ComponentLaunch {
 			Typhoon typhoon = node.getService(Typhoon.class, "TyphoonDbComponent");
 			String result = typhoon.getTyPhoonInfo("1");
 			try {
-				String resultUTF8 =  new String(result.getBytes("ISO-8859-1"),"UTF-8");
+//				String resultUTF8 =  new String(result.getBytes("ISO-8859-1"),"UTF-8");
+				String resultUTF8 = new String(result.getBytes("ISO-8859-1"),"UTF-8");
 				System.out.println(resultUTF8);
 			} catch (UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block

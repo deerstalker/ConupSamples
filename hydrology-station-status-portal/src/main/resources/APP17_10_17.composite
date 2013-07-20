@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912" xmlns:tuscany="http://tuscany.apache.org/xmlns/sca/1.1" xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912" targetNamespace="http://conup" name="hydrology-station-status-portal">
+  <component name="HydrologyStationPortalComponent">
+    <implementation.java class="cn.edu.nju.moon.station.portal.services.PortalImpl"/>
+    <reference name="auth" requires="trace" policySets="traceBindingPolicySet">
+      <tuscany:binding.jsonrpc uri="http://172.25.147.151:8065/HydrologyStationAuthComponent/StationAuthService"/>
+    </reference>
+    <reference name="proc" requires="trace" policySets="traceBindingPolicySet">
+      <tuscany:binding.jsonrpc uri="http://172.25.147.151:8067/HydrologyStationProcComponent/StationProcService"/>
+    </reference>
+    <service name="Portal" requires="trace" policySets="traceBindingPolicySet">
+      <tuscany:binding.rest uri="http://172.25.147.151:8068/HydrologyStationPortalComponent/StationPortalService"/>
+      <interface.java interface="cn.edu.nju.moon.station.portal.services.JaxrsPortal"/>
+    </service>
+  </component>
+</composite>

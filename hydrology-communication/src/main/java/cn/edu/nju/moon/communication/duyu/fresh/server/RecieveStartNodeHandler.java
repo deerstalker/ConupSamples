@@ -69,6 +69,21 @@ public class RecieveStartNodeHandler implements ServerInvocationHandler{
 				"/home/deerstalker/conup/conup-read-only/samples/hydrology-weather-intergration/target/classes",
 				"hydrology-weather-intergration", "App.composite",
 				"WeatherIntergrationComponent");
+		ComponentLaunch typhoonDbComponentLaunch = new ComponentLaunch(
+				"/home/deerstalker/conup/conup-read-only/samples/hydrology-typhoon-db/target/classes",
+				"hydrology-typhoon-db", "App.composite", "TyphoonDbComponent");
+		ComponentLaunch stationAuthComponentLaunch = new ComponentLaunch(
+				"/home/deerstalker/conup/conup-read-only/samples/hydrology-station-status-auth/target/classes",
+				"hydrology-station-status-auth", "App.composite", "HydrologyStationAuthComponent");
+		ComponentLaunch stationProcComponentLaunch = new ComponentLaunch(
+				"/home/deerstalker/conup/conup-read-only/samples/hydrology-station-status-proc/target/classes",
+				"hydrology-station-status-proc", "App.composite", "HydrologyStationProcComponent");
+		ComponentLaunch stationPortalComponentLaunch = new ComponentLaunch(
+				"/home/deerstalker/conup/conup-read-only/samples/hydrology-station-status-portal/target/classes",
+				"hydrology-station-status-portal", "App.composite", "HydrologyStationPortalComponent");
+		ComponentLaunch stationDBComponentLaunch = new ComponentLaunch(
+				"/home/deerstalker/conup/conup-read-only/samples/hydrology-station-status-db/target/classes",
+				"hydrology-station-status-db", "App.composite", "HydrologyStationDBComponent");
 		try {
 			dbComponentLaunch.startNode();
 			pondageComponentLaunch.startNode();
@@ -79,6 +94,12 @@ public class RecieveStartNodeHandler implements ServerInvocationHandler{
 			weatherCityComponentLaunch.startNode();
 			weatherStationComponentLaunch.startNode();
 			weatherIntergrationComponentLaunch.startNode();
+			typhoonDbComponentLaunch.startNode();
+			stationAuthComponentLaunch.startNode();
+			stationProcComponentLaunch.startNode();
+			stationPortalComponentLaunch.startNode();
+			stationDBComponentLaunch.startNode();
+			
 		} catch (ContributionReadException e) {
 			e.printStackTrace();
 		} catch (ValidationException e) {

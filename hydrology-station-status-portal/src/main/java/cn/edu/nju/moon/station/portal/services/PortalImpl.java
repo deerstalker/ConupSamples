@@ -1,5 +1,7 @@
 package cn.edu.nju.moon.station.portal.services;
 
+import java.io.UnsupportedEncodingException;
+
 import org.oasisopen.sca.annotation.Reference;
 import org.oasisopen.sca.annotation.Service;
 
@@ -15,6 +17,12 @@ public class PortalImpl implements Portal{
 		// TODO Auto-generated method stub
 		String token = auth.getToken();
 		String result = proc.process(stationId, token);
+		try {
+			result = new String(result.getBytes("ISO-8859-1"),"UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return result;
 	}
 	public Auth getAuth() {

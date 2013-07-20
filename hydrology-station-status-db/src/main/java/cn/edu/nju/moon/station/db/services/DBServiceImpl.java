@@ -1,5 +1,6 @@
 package cn.edu.nju.moon.station.db.services;
 
+import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -66,6 +67,12 @@ CREATE TABLE `STATIONINFO`(
 			e.printStackTrace();
 		}
 		LOGGER.info(result);
+		try {
+			result = new String(result.getBytes("UTF-8"),"ISO-8859-1");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return result;
 	}
 	

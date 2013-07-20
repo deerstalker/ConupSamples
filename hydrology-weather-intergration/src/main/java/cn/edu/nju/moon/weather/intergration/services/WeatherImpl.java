@@ -40,7 +40,13 @@ public class WeatherImpl implements Weather, TyphoonService {
 			prefix = "station";
 		}
 		result = prefix + "#" + result;
-		logger.info(result);
+		try {
+			result = new String(result.getBytes("ISO-8859-1"),"UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//		logger.info(result);
 		return result;
 	}
 
@@ -67,15 +73,16 @@ public class WeatherImpl implements Weather, TyphoonService {
 		// TODO Auto-generated method stub
 //		return mTyphoon.getTyPhoonInfo(flag);
 		String resultString = mTyphoon.getTyPhoonInfo(flag);
-		logger.info(resultString);
+//		logger.info(resultString);
+		String resultUTF8 = "";
 		try {
-			String resultUTF8 = new String(resultString.getBytes("ISO-8859-1"),"UTF-8");
-			logger.info(resultUTF8);
+			resultUTF8 = new String(resultString.getBytes("ISO-8859-1"),"UTF-8");
+//			logger.info(resultUTF8);
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return resultString;
+		return resultUTF8;
 	}
 
 }

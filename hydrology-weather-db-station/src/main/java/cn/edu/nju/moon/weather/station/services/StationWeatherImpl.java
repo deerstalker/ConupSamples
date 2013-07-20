@@ -43,8 +43,9 @@ public class StationWeatherImpl implements StationWeather {
 			statement.setString(2, station);
 			ResultSet tResultSet = statement.executeQuery();
 			if (tResultSet.next()) {
-//				result = tResultSet.getString("id") + "#" + tResultSet.getString("WEATHER_") + "#" + tResultSet.getString("TEMPERATURE_") + "#" + tResultSet.getString("WIND_");
-				result = tResultSet.getString("id");
+				result = tResultSet.getString("id") + "#" + tResultSet.getString("WEATHER_") + "#" + tResultSet.getString("TEMPERATURE_") + "#" + tResultSet.getString("WIND_");
+//				result = tResultSet.getString("id");
+				result = new String(result.getBytes("UTF-8"),"ISO-8859-1");
 			}
 			tResultSet.close();
 			conn.close();
