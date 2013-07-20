@@ -46,7 +46,7 @@ CREATE TABLE `STATIONINFO`(
 			statement.setString(1, stationId);
 			ResultSet tResultSet = statement.executeQuery();
 			if (tResultSet.next()) {
-				result = tResultSet.getString("RVNM_") + "#" + tResultSet.getString("HNNM") + "#" 
+				result = tResultSet.getString("RVNM_") + "#" + tResultSet.getString("HNNM_") + "#" 
 						+ tResultSet.getString("DRNA_");
 			}
 			tResultSet.close();

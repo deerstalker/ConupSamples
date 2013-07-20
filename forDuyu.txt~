@@ -16,6 +16,13 @@ classpath:
 	hydrology-weather-city:cn.edu.nju.moon.weather.city.services.CityWeatherImpl
 	hydrology-weather-station:cn.edu.nju.moon.weather.station.services.StationWeatherImpl
 	hydrology-weather-intergration:cn.edu.nju.moon.weather.intergration.services.JaxrsWeather
+
+	hydrology-typhoon-db:cn.edu.nju.moon.typhoon.services.TyphoonImpl
+	hydrology-station-status-db:cn.edu.nju.moon.station.db.services.DBServiceImpl
+	hydrology-station-status-auth:cn.edu.nju.moon.station.auth.AuthImpl
+	hydrology-station-status-proc:cn.edu.nju.moon.station.proc.services.ProcImpl
+	hydrology-station-status-portal:cn.edu.nju.moon.station.portal.services.PortalImpl
+	hydrology-station-status-auth-update:cn.edu.nju.moon.station.auth.AuthImpl
 	
 
 

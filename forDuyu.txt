@@ -22,6 +22,7 @@ classpath:
 	hydrology-station-status-auth:cn.edu.nju.moon.station.auth.AuthImpl
 	hydrology-station-status-proc:cn.edu.nju.moon.station.proc.services.ProcImpl
 	hydrology-station-status-portal:cn.edu.nju.moon.station.portal.services.PortalImpl
+	hydrology-station-status-auth-update:cn.edu.nju.moon.station.auth.AuthImpl
 	
 
 
