@@ -4,7 +4,7 @@
 		xmlns:tuscany="http://tuscany.apache.org/xmlns/sca/1.1"
 		xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
 		targetNamespace="http://conup"
-		name="conup-sample-proc"
+		name="hydrology-station-status-portal"
 		 >
         
 		
