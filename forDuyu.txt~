@@ -15,6 +15,7 @@ classpath:
 	
 	hydrology-weather-city:cn.edu.nju.moon.weather.city.services.CityWeatherImpl
 	hydrology-weather-station:cn.edu.nju.moon.weather.station.services.StationWeatherImpl
+	hydrology-weather-intergration:cn.edu.nju.moon.weather.intergration.services.JaxrsWeather
 	
 
 
