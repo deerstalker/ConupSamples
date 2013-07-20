@@ -36,6 +36,7 @@ CREATE TABLE `STATIONINFO`(
 	`RVNM_` varchar(30),
 	`HNNM_` varchar(30),
 	`DRNA_` int,
+	`VIDEOURL_` varchar(800),
 	PRIMARY KEY  (`ID_`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

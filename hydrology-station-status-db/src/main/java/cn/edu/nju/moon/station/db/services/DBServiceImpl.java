@@ -49,6 +49,9 @@ CREATE TABLE `STATIONINFO`(
 				result = tResultSet.getString("RVNM_") + "#" + tResultSet.getString("HNNM_") + "#" 
 						+ tResultSet.getString("DRNA_");
 			}
+			if(token.equals("level2")){
+				//query video
+			}
 			tResultSet.close();
 			conn.close();
 		} catch (SQLException e) {
