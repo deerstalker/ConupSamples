@@ -49,7 +49,7 @@ public class RecieveUpdateHandler implements ServerInvocationHandler {
 					Integer.parseInt(params[2].toString()),
 					params[3].toString(), policy, params[4].toString(),
 					params[5].toString(), params[6].toString(),
-					params[7].toString(), "172.25.146.39");
+					params[7].toString(), "172.25.147.132");
 			
 			/*
 			 * add by chendong:test

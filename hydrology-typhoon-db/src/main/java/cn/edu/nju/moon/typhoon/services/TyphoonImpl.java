@@ -64,7 +64,7 @@ public class TyphoonImpl implements Typhoon {
 			// do something
 			e.printStackTrace();
 		}
-		LOGGER.info(result);
+//		LOGGER.info(result);
 		try {
 			result = new String(result.getBytes("UTF-8"),"ISO-8859-1");
 		} catch (UnsupportedEncodingException e) {

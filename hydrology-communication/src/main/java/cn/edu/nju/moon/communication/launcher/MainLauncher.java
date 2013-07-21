@@ -11,7 +11,7 @@ public class MainLauncher {
 		// TODO Auto-generated method stub
 		MsgServer msgServer = new MsgServer("172.25.147.151",
 				"/home/deerstalker/conup/conup-read-only/samples",
-				"172.25.146.39");
+				"172.25.147.132");
 		try {
 			msgServer.startServer();
 		} catch (Throwable e) {
