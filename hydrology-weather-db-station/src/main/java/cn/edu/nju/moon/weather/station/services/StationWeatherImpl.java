@@ -38,6 +38,8 @@ public class StationWeatherImpl implements StationWeather {
 			String sql = "select id, WEATHER_, TEMPERATURE_, WIND_ from STATIONWEATHERINFO, STATIONINFO  where TIME_ = ? and STATIONINFO.ALIAS_ = ? and STATIONINFO.ID_ = STATIONWEATHERINFO.STATIONID_";
 			PreparedStatement statement = conn.prepareStatement(sql);
 			// "2012-08-08 09:00:00"
+			String[] timeString = time.split(" ");
+			time = timeString[0] + " " + "00:00:00";
 			statement.setString(1, time);
 			// "台州"
 			statement.setString(2, station);

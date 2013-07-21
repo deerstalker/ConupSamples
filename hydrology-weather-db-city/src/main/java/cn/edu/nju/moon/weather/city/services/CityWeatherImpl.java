@@ -37,6 +37,8 @@ public class CityWeatherImpl implements CityWeather {
 			// Statement statement = conn.createStatement();
 			String sql = "select id, WEATHER_, TEMPERATURE_, WIND_ from CITYWEATHERINFO, city  where TIME_ = ? and city.ALIAS_ = ? and city.ID_ = CITYWEATHERINFO.CITYID_";
 			PreparedStatement statement = conn.prepareStatement(sql);
+			String[] timeString = time.split(" ");
+			time = timeString[0] + " " + "00:00:00";
 			// content like: "2012-08-08 09:00:00"
 			statement.setString(1, time);
 			// content like: "台州"
