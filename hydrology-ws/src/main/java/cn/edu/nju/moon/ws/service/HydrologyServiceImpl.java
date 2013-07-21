@@ -12,12 +12,11 @@ import cn.edu.nju.moon.ws.rainfall.station.StationRainfallService;
 import cn.edu.nju.moon.ws.rainfall.station.StationRfWSService;
 
 @Service({PondageWSService.class, CityRfWSService.class, StationRfWSService.class})
-public class HydrologyServiceImpl implements PondageWSService, CityRfWSService, StationRfWSService
-{
+public class HydrologyServiceImpl implements PondageWSService, CityRfWSService, StationRfWSService{
 
-	PondageService nodePondage;
-	CityRainfallService nodeCityRf;
-	StationRainfallService nodeStationRf;
+	private PondageService nodePondage;
+	private CityRainfallService nodeCityRf;
+	private StationRainfallService nodeStationRf;
 	
 	@Reference
 	public void setNodeCityRf(CityRainfallService nodeCityRf){

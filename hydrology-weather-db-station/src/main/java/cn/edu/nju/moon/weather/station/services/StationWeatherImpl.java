@@ -56,7 +56,7 @@ public class StationWeatherImpl implements StationWeather {
 			// do something
 			e.printStackTrace();
 		}
-		LOGGER.info(result);
+//		LOGGER.info(result);
 		return result;
 	}
 
