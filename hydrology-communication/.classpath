@@ -17,7 +17,8 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/home/deerstalker/conup/conup-read-only/samples/hydrology-communication/libs/RemoteClient.jar"/>
+	<classpathentry kind="lib" path="/home/deerstalker/conup/conup-read-only/samples/hydrology-communication/libs/conup-core-0.9.1-DU-SNAPSHOT.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

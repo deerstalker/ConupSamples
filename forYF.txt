@@ -1,0 +1,7 @@
+HydrologyComponent:hydrology-ws
+DBCityWeatherComponent:hydrology-weather-db-city
+DBStationWeatherComponent:hydrology-weather-db-station
+TyphoonDBComponent:hydrology-typhoon-db
+HydrologyStationAuthComponent:hydrology-station-status-auth
+HydrologyStationProcComponent:hydrology-station-status-proc
+
